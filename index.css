@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* PAGE 1 */
+
+nav {
+  font-family: "Popins", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 30px 100px;
+}
+
+nav .logo {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+  list-style: none;
+  margin-left: 40px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.tabs input {
+  visibility: hidden;
+  display: none;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.buttons label {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+  opacity: 1;
+  width: 50px;
+}
+
+.content {
+  position: relative;
+  width: 300vw;
+  display: flex;
+  transition: 0.5s;
+}
+
+.content .box {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 40px;
+}
+
+.content .box:nth-child(1) {
+  background: linear-gradient(90deg, #3d3f40, #41705b);
+}
+
+.content .box:nth-child(2) {
+  background: linear-gradient(90deg, #41705b, #796e60);
+}
+
+.content .box:nth-child(3) {
+  background: linear-gradient(90deg, #796e60, #f2f0d8);
+}
+
+.tabs input:nth-child(1):checked ~ .content {
+  left: 0;
+}
+
+.tabs input:nth-child(2):checked ~ .content {
+  left: -100vw;
+}
+
+.tabs input:nth-child(3):checked ~ .content {
+  left: -200vw;
+}
+
+.contentBx {
+  display: flex;
+  flex-direction: row;
+}
+
+.contentBx div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contentBx h2 {
+  text-align: center;
+  width: 5em;
+  font-size: 3em;
+  color: #fff;
+}
+.contentBx span {
+  font-weight: 800;
+  font-size: 6em;
+  color: #fff;
+}
+
+#ghanacard {
+  animation: superman-fly-right ease-in-out 2s forwards;
+  width: 800px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+}
+
+@keyframes superman-fly-right {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* END PAGE 1 */
+
+/* PAGE 2 */
+.wrapper{
+  width: 400px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.wrapper header{
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: relative;
+}
+header label{
+  height: 100%;
+  z-index: 2;
+  width: 30%;
+  display: flex;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+#tab-1:checked ~ header .tab-1,
+#tab-2:checked ~ header .tab-2,
+#tab-3:checked ~ header .tab-3{
+  color: #fff;
+}
+header label:nth-child(2){
+  width: 40%;
+}
+header .slider{
+  position: absolute;
+  height: 85%;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+  transition: all 0.3s ease;
+}
+#tab-1:checked ~ header .slider{
+  left: 0%;
+  width: 90px;
+  transform: translateX(5%);
+}
+#tab-2:checked ~ header .slider{
+  left: 50%;
+  width: 120px;
+  transform: translateX(-50%);
+}
+#tab-3:checked ~ header .slider{
+  left: 100%;
+  width: 95px;
+  transform: translateX(-105%);
+}
+.wrapper input[type="radio"]{
+  display: none;
+}
+.card-area{
+  overflow: hidden;
+}
+.card-area .cards{
+  display: flex;
+  width: 300%;
+}
+.cards .row{
+  width: 33.4%;
+}
+.cards .row-1{
+  transition: all 0.3s ease;
+}
+#tab-1:checked ~ .card-area .cards .row-1{
+   margin-left: 0%;
+}
+#tab-2:checked ~ .card-area .cards .row-1{
+  margin-left: -33.4%;
+}
+#tab-3:checked ~ .card-area .cards .row-1{
+   margin-left: -66.8%;
+}
+.row .price-details{
+  margin: 20px 0;
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.price-details .price{
+  font-size: 65px;
+  font-weight: 600;
+  position: relative;
+  font-family: 'Noto Sans', sans-serif;
+}
+.price-details .price::before,
+.price-details .price::after{
+  position: absolute;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.price-details .price::before{
+  content: "₵";
+  left: -13px;
+  top: 17px;
+  font-size: 20px;
+}
+.price-details .price::after{
+  content: "/mon";
+  right: -33px;
+  bottom: 17px;
+  font-size: 13px;
+}
+.price-details p{
+  font-size: 18px;
+  margin-top: 5px;
+}
+.row .features li{
+  display: flex;
+  font-size: 15px;
+  list-style: none;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.features li i{
+  background: linear-gradient(#D5A3FF 0%, #77A5F8 100%);
+  background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+.features li span{
+  margin-left: 10px;
+}
+.wrapper button{
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  height: 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+  transition: transform 0.3s ease;
+}
+.wrapper button:hover{
+  transform: scale(0.98);
+}
+/* END PAGE 2 */
